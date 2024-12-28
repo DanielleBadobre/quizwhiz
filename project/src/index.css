@@ -1,0 +1,278 @@
+@import url('https://fonts.googleapis.com/css?family=VT323');
+@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply text-gray-900 antialiased;
+    font-family: 'VT323', monospace; /* Default font for body */
+  }
+}
+
+@layer components {
+  .container {
+    @apply max-w-7xl mx-auto;
+  }
+}
+
+@layer utilities {
+  .perspective-1000 {
+    perspective: 1000px;
+  }
+
+  .backface-hidden {
+    backface-visibility: hidden;
+  }
+
+  .transform-style-3d {
+    transform-style: preserve-3d;
+  }
+
+  .rotate-y-180 {
+    transform: rotateY(180deg);
+  }
+
+  body {
+    background-color: #FDF0F2;
+  }
+
+  .pixel-btn {
+    /* Base button styles */
+    font-size: 25px;
+    color: #FFDBE9;
+    height: auto;
+    margin: 10px;
+    font-family: 'VT323', monospace;
+    position: relative;
+    display: inline-block;
+    vertical-align: top;
+    text-transform: uppercase;
+    cursor: pointer;
+    line-height: 0;
+    
+    /* Disable text selection */
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    
+    /* Pixel-perfect rendering */
+    image-rendering: optimizeSpeed;
+    image-rendering: -moz-crisp-edges;
+    image-rendering: -o-crisp-edges;
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+    -ms-interpolation-mode: nearest-neighbor;
+    
+    /* Border style */
+    border-style: solid;
+    border-width: 20px;
+    border-image: url(https://i.imgur.com/sREM8Yn.png) 20 stretch;
+    -moz-border-image: url(https://i.imgur.com/sREM8Yn.png) 20 stretch;
+    -webkit-border-image: url(https://i.imgur.com/sREM8Yn.png) 20 stretch;
+    -o-border-image: url(https://i.imgur.com/sREM8Yn.png) 20 stretch;
+  }
+  
+  /* Click effect */
+  .pixel-btn:active {
+    top: 2px;
+  }
+  
+  /* Inner button content */
+  .pixel-btn p {
+    display: inline-block;
+    vertical-align: top;
+    position: relative;
+    width: auto;
+    text-align: center;
+    margin: -20px -20px;
+    line-height: 20px;
+    padding: 10px 20px;
+    
+    background: #C094E4;
+    background:
+      linear-gradient(135deg, transparent 10px, #C094E4 0) top left,
+      linear-gradient(225deg, transparent 10px, #C094E4 0) top right,
+      linear-gradient(315deg, transparent 10px, #C094E4 0) bottom right,
+      linear-gradient(45deg,  transparent 10px, #C094E4 0) bottom left;
+    background-size: 50% 50%;
+    background-repeat: no-repeat;
+    background-image:
+      radial-gradient(circle at 0 0, rgba(204,0,0,0) 14px, #C094E4 15px),
+      radial-gradient(circle at 100% 0, rgba(204,0,0,0) 14px, #C094E4 15px),
+      radial-gradient(circle at 100% 100%, rgba(204,0,0,0) 14px, #C094E4 15px),
+      radial-gradient(circle at 0 100%, rgba(204,0,0,0) 14px, #C094E4 15px);
+  }
+  
+  /* Container styles for proper alignment */
+  .pixel-container {
+    margin: 50px;
+    display: block;
+    width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+  }
+
+  .pixel-corners {
+    clip-path: polygon(
+      0px calc(100% - 20px),
+      4px calc(100% - 20px),
+      4px calc(100% - 12px),
+      8px calc(100% - 12px),
+      8px calc(100% - 8px),
+      12px calc(100% - 8px),
+      12px calc(100% - 4px),
+      20px calc(100% - 4px),
+      20px 100%,
+      calc(100% - 20px) 100%,
+      calc(100% - 20px) calc(100% - 4px),
+      calc(100% - 12px) calc(100% - 4px),
+      calc(100% - 12px) calc(100% - 8px),
+      calc(100% - 8px) calc(100% - 8px),
+      calc(100% - 8px) calc(100% - 12px),
+      calc(100% - 4px) calc(100% - 12px),
+      calc(100% - 4px) calc(100% - 20px),
+      100% calc(100% - 20px),
+      100% 20px,
+      calc(100% - 4px) 20px,
+      calc(100% - 4px) 12px,
+      calc(100% - 8px) 12px,
+      calc(100% - 8px) 8px,
+      calc(100% - 12px) 8px,
+      calc(100% - 12px) 4px,
+      calc(100% - 20px) 4px,
+      calc(100% - 20px) 0px,
+      20px 0px,
+      20px 4px,
+      12px 4px,
+      12px 8px,
+      8px 8px,
+      8px 12px,
+      4px 12px,
+      4px 20px,
+      0px 20px
+    );
+  }
+
+  /* Optional: Add a click effect */
+  .pixel-corners:active {
+    transform: translateY(2px);
+  }
+  /* Typewriter effect */
+@keyframes typing {
+  0.0000%, 27.3488% { content: ""; }
+  1.1395%, 26.2093% { content: "m"; }
+  2.2791%, 25.0698% { content: "ma"; }
+  3.4186%, 23.9302% { content: "mat"; }
+  4.5581%, 22.7907% { content: "math"; }
+  5.6977%, 21.6512% { content: "mathe"; }
+  6.8372%, 20.5116% { content: "mathem"; }
+  7.9767%, 19.3721% { content: "mathema"; }
+  9.1163%, 18.2326% { content: "mathemat"; }
+  10.2558%, 17.0930% { content: "mathematics"; }
+
+  30.7674%, 51.2791% { content: ""; }
+  31.9070%, 50.1395% { content: "h"; }
+  33.0465%, 49.0000% { content: "hi"; }
+  34.1860%, 47.8605% { content: "his"; }
+  35.3256%, 46.7209% { content: "hist"; }
+  36.4651%, 45.5814% { content: "histo"; }
+  37.6047%, 44.4419% { content: "history"; }
+
+  54.6977%, 75.2093% { content: ""; }
+  55.8372%, 74.0698% { content: "s"; }
+  56.9767%, 72.9302% { content: "sc"; }
+  58.1163%, 71.7907% { content: "sci"; }
+  59.2558%, 70.6512% { content: "scie"; }
+  60.3953%, 69.5116% { content: "scien"; }
+  61.5349%, 68.3721% { content: "science"; }
+
+  78.6279%, 96.8605% { content: ""; }
+  79.7674%, 95.7209% { content: "l"; }
+  80.9070%, 94.5814% { content: "la"; }
+  82.0465%, 93.4419% { content: "lan"; }
+  83.1860%, 92.3023% { content: "lang"; }
+  84.3256%, 91.1628% { content: "languages"; }
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+.typewriter {
+  --caret: #FBADD1;
+  color: #C094E4;
+  font-size: inherit;
+}
+
+.typewriter::before {
+  content: "";
+  animation: typing 13.5s infinite;
+}
+
+.typewriter::after {
+  content: "";
+  border-right: 1ch solid var(--caret);
+  animation: blink 0.5s linear infinite;
+}
+
+@media (prefers-reduced-motion) {
+  .typewriter::after {
+    animation: none;
+  }
+  
+  @keyframes sequencePopup {
+    0%, 100% { content: "mathematics"; }
+    25% { content: "history"; }
+    50% { content: "science"; }
+    75% { content: "languages"; }
+  }
+
+  .typewriter::before {
+    content: "mathematics";
+    animation: sequencePopup 12s linear infinite;
+  }
+}
+
+/*scroll animation */
+.parallax {
+  height: 60px;
+  line-height: 60px;
+  font-size: 2rem;
+  font-weight: bold;
+  color: #C094E4;
+}
+
+.scroller {
+  position: relative;
+  padding: 0;
+}
+
+.scroller > span {
+  display: inline-block;
+}
+.loading-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+}
