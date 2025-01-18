@@ -40,7 +40,7 @@ const DeckSchema = new Schema({
   toJSON: {
     virtuals: true,
     transform: (_, ret) => {
-      delete ret.__v;
+      delete ret.__v; // Clean up __v field from JSON response
       return ret;
     }
   }
