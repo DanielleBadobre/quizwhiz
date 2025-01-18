@@ -49,15 +49,15 @@ const DeckSchema = new Schema({
 // Index for fast searching by title
 DeckSchema.index({ title: 1 });
 
-// Add any static methods
+// static methods
 DeckSchema.statics.findByTitle = function(title: string) {
   return this.findOne({ title });
 };
 
-// Add any instance methods
-// DeckSchema.methods.addCard = async function(cardId: string) {
-//   this.cards.push(cardId);
-//   await this.save();
-// };
+// instance methods
+DeckSchema.methods.addCard = async function(cardId: string) {
+  this.cards.push(cardId); // Add a card ID to the deck's cards
+  await this.save(); // Save the deck with the new card added
+};
 
 export const DeckModel = mongoose.model<DeckDocument, DeckModel>('Deck', DeckSchema);
