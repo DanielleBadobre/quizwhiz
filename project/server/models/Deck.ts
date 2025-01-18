@@ -46,7 +46,7 @@ const DeckSchema = new Schema({
   }
 });
 
-// Add indexes if needed
+// Index for fast searching by title
 DeckSchema.index({ title: 1 });
 
 // Add any static methods
