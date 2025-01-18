@@ -9,10 +9,9 @@ export interface Deck extends Document {
   updatedAt: Date;
 }
 
-// Interface for Deck methods (if you add any)
+// Interface for Deck methods (instance methods)
 export interface DeckMethods {
-  // Add custom method signatures here
-  // example: addCard(cardId: string): Promise<void>;
+  addCard(cardId: string): Promise<void>; // Custom method example
 }
 
 // Combined Document and Methods interface
@@ -20,8 +19,7 @@ export interface DeckDocument extends Deck, DeckMethods {}
 
 // Interface for static methods
 export interface DeckModel extends Model<DeckDocument> {
-  // Add static method signatures here
-  // example: findByTitle(title: string): Promise<DeckDocument | null>;
+  findByTitle(title: string): Promise<DeckDocument | null>; // Static method example
 }
 
 const DeckSchema = new Schema({
