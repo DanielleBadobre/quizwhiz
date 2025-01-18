@@ -33,12 +33,3 @@ export const validateRequest = (schema: AnyZodObject) => {
     }
   };
 };
-
-// Usage example in routes:
-/*
-router.post(
-  '/text',
-  validateRequest(DeckController.createDeckSchema),
-  DeckController.createFromText
-);
-*/
