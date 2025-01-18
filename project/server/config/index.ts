@@ -30,7 +30,7 @@ for (const envVar of requiredEnvVars) {
 export const CONFIG: Config = {
   PORT: Number(process.env.PORT) || 3000,
   MONGODB_URI: process.env.MONGODB_URI || 'mongodb://localhost:27017/quizzwhiz',
-  GEMINI_API_KEY: process.env.GEMINI_API_KEY!, // We know this exists from validation above
+  GEMINI_API_KEY: process.env.GEMINI_API_KEY!,
   NODE_ENV: (process.env.NODE_ENV as Config['NODE_ENV']) || 'development',
   CORS_ORIGIN: process.env.CORS_ORIGIN || 'http://localhost:5173',
   RATE_LIMIT: {
