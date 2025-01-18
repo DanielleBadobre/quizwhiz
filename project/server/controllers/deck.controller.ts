@@ -1,6 +1,5 @@
 import { Request, Response } from 'express';
 import { DeckService } from '../services/deck.service.js';
-import { validateRequest } from '../middleware/validate.js';
 import { z } from 'zod';
 import { FileService } from '../services/file.service';
 
