@@ -15,8 +15,6 @@ export interface FlashcardDocument extends IFlashcard, Document {}
 
 // Interface for Flashcard model
 export interface FlashcardModel extends Model<FlashcardDocument> {
-  // Add static methods here if needed
-  // findByTag(tag: string): Promise<FlashcardDocument[]>;
 }
 
 const FlashcardSchema = new Schema({
@@ -55,21 +53,8 @@ const FlashcardSchema = new Schema({
   }
 });
 
-// Add indexes for better query performance
+// indexes for better query performance
 FlashcardSchema.index({ tags: 1 });
 FlashcardSchema.index({ lastReviewed: 1 });
-
-// Add any static methods
-// FlashcardSchema.statics.findByTag = function(tag: string) {
-//   return this.find({ tags: tag.toLowerCase() });
-// };
-
-// Add any instance methods if needed
-// FlashcardSchema.methods.addTag = function(tag: string) {
-//   if (!this.tags.includes(tag.toLowerCase())) {
-//     this.tags.push(tag.toLowerCase());
-//   }
-//   return this.save();
-// };
 
 export const FlashcardModel = mongoose.model<FlashcardDocument, FlashcardModel>('Flashcard', FlashcardSchema);
