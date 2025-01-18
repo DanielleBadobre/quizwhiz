@@ -21,8 +21,8 @@ export default function Header() {
     <header className="fixed w-full bg-[#FDF0F2] backdrop-blur-md z-50 border-b border-gray-100">
       <nav className="container mx-auto px-4 py-3">
         <div className="flex items-center justify-between">
-          <Link to="/" className="flex items-center space-x-2" style={{ marginLeft: '-40px' }}>
-            <img src={logo} alt="QuizzWhiz Logo" className="h-12 w-15" />
+          <Link to="/" className="flex items-center">
+            <img src={logo} alt="QuizzWhiz Logo" className="h-8 md:h-12 w-auto object-contain" />
           </Link>
 
           {/* Desktop Navigation */}

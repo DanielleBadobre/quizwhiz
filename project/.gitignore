@@ -1,5 +1,5 @@
 # Logs
-logs
+logs/
 *.log
 npm-debug.log*
 yarn-debug.log*
@@ -7,18 +7,64 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
-node_modules
-dist
-dist-ssr
-*.local
+# Node.js dependencies and build outputs
+node_modules/
+dist/
+build/
+dist-ssr/
 
 # Editor directories and files
-.vscode/*
+.vscode/
 !.vscode/extensions.json
-.idea
+.idea/
 .DS_Store
 *.suo
 *.ntvs*
 *.njsproj
 *.sln
 *.sw?
+
+# Temporary files
+*.tmp
+*.temp
+
+# OS-specific files
+Thumbs.db
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+
+# TypeScript build files (remove *.js to avoid issues with .tsx)
+*.js.map
+*.d.ts
+
+# Vite build outputs
+.vite/
+*.cache/
+
+# Tailwind generated files
+!tailwind.config.js
+
+# Specific to this project
+server/services/temp_uploads/
+src/components/images/*:Zone.Identifier
+src/components/images/*.mp4
+src/components/images/*.gif
+src/components/images/*.jpg
+src/components/images/*.png
+
+# Ignore coverage reports
+coverage/
+
+# Ignore test results
+junit.xml
+test-results.xml
+
+# Ignore vercel deployment files
+.vercel/
+
+# Ignore package lock files
+package-lock.json
+pnpm-lock.yaml

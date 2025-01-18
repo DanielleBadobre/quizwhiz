@@ -23,6 +23,9 @@ export class AIService {
     try {
       // Strip markdown code blocks if present
       let cleanText = text.replace(/```json\n?|\n?```/g, '').trim();
+      cleanText = cleanText
+      .replace(/[\u2018\u2019]/g, "'")   // Replace single smart quotes
+      .replace(/[\u201C\u201D]/g, '"');  // Replace double smart quotes
       
       // Log the cleaned text for debugging
       console.log('Cleaned text before parsing:', cleanText);
