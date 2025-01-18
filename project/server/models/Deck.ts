@@ -50,9 +50,9 @@ const DeckSchema = new Schema({
 DeckSchema.index({ title: 1 });
 
 // Add any static methods
-// DeckSchema.statics.findByTitle = function(title: string) {
-//   return this.findOne({ title });
-// };
+DeckSchema.statics.findByTitle = function(title: string) {
+  return this.findOne({ title });
+};
 
 // Add any instance methods
 // DeckSchema.methods.addCard = async function(cardId: string) {
