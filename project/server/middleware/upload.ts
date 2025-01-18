@@ -12,6 +12,7 @@ export const upload = multer({
     const allowedTypes = ['.txt', '.pdf'];
     const ext = path.extname(file.originalname).toLowerCase();
     
+    // Check if the file extension is allowed
     if (allowedTypes.includes(ext)) {
       cb(null, true);
     } else {
