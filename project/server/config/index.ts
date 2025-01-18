@@ -22,7 +22,7 @@ interface Config {
 const requiredEnvVars = ['GEMINI_API_KEY'] as const;
 for (const envVar of requiredEnvVars) {
   if (!process.env[envVar]) {
-    throw new Error(`Missing required environment variable: ${envVar}`);
+    throw new Error(`Missing required environment variable: ${envVar}. Please check your .env file.`);
   }
 }
 
