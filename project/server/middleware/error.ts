@@ -34,6 +34,13 @@ export const errorHandler = (
   if (err instanceof MongooseError) {
     return res.status(400).json({
       success: false,
+      error: 'Database Validation Error',
+      message: err.message
+    });
+  }
+  if (err instanceof MongooseError) {
+    return res.status(500).json({
+      success: false,
       error: 'Database Error',
       message: err.message
     });
