@@ -2,8 +2,6 @@ import { DeckModel } from '../models/Deck.js';
 import { FlashcardModel } from '../models/Flashcard.js';
 import { AIService } from './ai.service.js';
 import { FileService } from './file.service';
-import { transformDeck } from '../utils/transformers';
-import { CreateDeckOptions } from '../types/deck';
 
 export class DeckService {
   static async getAllDecks() {
