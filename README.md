@@ -8,7 +8,7 @@
 1. **AI-Powered Flashcard Generation**:
    - Generates flashcards based on:
      - Raw text input.
-     - Uploaded files (e.g., PDFs).
+     - Uploaded files (TXT, PDFs).
      - Topic-based input.
 
 2. **Seamless Downloads**:
@@ -35,8 +35,6 @@
   - Express.js
   - MongoDB (for future storage and user personalization capabilities)
 
-- **Deployment**:
-  - Hosted on **Vercel**.
 
 ---
 
@@ -54,7 +52,7 @@ Follow these steps to run the project locally:
 
 1. **Clone the Repository**:
    ```bash
-   git clone https://github.com/your-username/quizwhiz.git
+   git clone https://github.com/DanielleBadobre/quizwhiz.git
    cd quizwhiz
    ```
 
@@ -95,7 +93,7 @@ Follow these steps to run the project locally:
 ```plaintext
 project/
 ├── server/             # Backend files
-│   ├── api/            # API routes
+│   ├── routes/         # Deck routes
 │   ├── config/         # Configuration files
 │   ├── controllers/    # Business logic for API
 │   ├── middleware/     # Middleware for error handling and validation
